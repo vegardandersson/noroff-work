@@ -1,12 +1,18 @@
+import other_stuff.PrintShapes;
 import other_stuff.TestClass;
+
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
-        TestClass testClass = new TestClass("Hello world!");
-        System.out.println(testClass.relayMessage());
+        PrintShapes test = new PrintShapes();
+        Scanner scan = new Scanner(System.in);
 
-        TestClass testClassEmpty = new TestClass();
-        System.out.println(testClassEmpty.relayMessage());
+        while(true) {
+            System.out.println("Input dimension of square");
+            int dimension = scan.nextInt();
+            test.printSquare(dimension);
+        }
     }
 }
