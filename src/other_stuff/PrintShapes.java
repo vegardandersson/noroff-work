@@ -2,6 +2,22 @@ package other_stuff;
 
 public class PrintShapes {
 
+
+    public void printTriangle(int dimension){
+
+        //Initialize and Instantiate graphical symbol
+        String symbol = "*";
+        String space = "  ";
+
+        //Initializing line types
+        String intermediateLine;
+        String topLine;
+        String bottomLine;
+
+
+
+    }
+
     public void printSquare(int dimension){
 
         //Initialize and Instantiate graphical symbol
@@ -10,8 +26,8 @@ public class PrintShapes {
         String space = "   ";
 
         //Initialize line types
-        String fullLine = "";
-        String intermediateLine = "";
+        String fullLine;
+        String intermediateLine;
 
         //Build fullLine
         fullLine = symbol.repeat(dimension-1);
