@@ -2,9 +2,7 @@ package other_stuff;
 
 public class PrintShapes {
 
-
     public static void printTriangle(int dimension){
-
         //Initialize and Instantiate graphical symbol
         String symbol = "*";
         String space = "  ";
@@ -13,9 +11,6 @@ public class PrintShapes {
         String intermediateLine;
         String topLine;
         String bottomLine;
-
-
-
     }
 
     public static void printSquare(int dimension){

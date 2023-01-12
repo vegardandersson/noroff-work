@@ -5,9 +5,10 @@ public class KataSimpleFunctions {
 
         String fizz = "Fizz";
         String buzz = "Buzz";
+        String result;
 
         for(int i = 1; i < numOfLoops; i++){
-            String result = "";
+            result = "";
             if(i % 3 == 0){
                 result = result.concat(fizz);
             }
