@@ -1,11 +1,13 @@
 import other_stuff.PrintShapes;
 import other_stuff.TestClass;
+import kata.KataSimpleFunctions;
 
 import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
+        /*
         Scanner scan = new Scanner(System.in);
 
         while(true) {
@@ -13,5 +15,9 @@ public class Main {
             int dimension = scan.nextInt();
             PrintShapes.printSquare(dimension);
         }
+         */
+
+        KataSimpleFunctions.fizzBuzz(100);
+
     }
 }
