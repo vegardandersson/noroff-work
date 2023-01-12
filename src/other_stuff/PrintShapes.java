@@ -3,7 +3,7 @@ package other_stuff;
 public class PrintShapes {
 
 
-    public void printTriangle(int dimension){
+    public static void printTriangle(int dimension){
 
         //Initialize and Instantiate graphical symbol
         String symbol = "*";
@@ -18,7 +18,7 @@ public class PrintShapes {
 
     }
 
-    public void printSquare(int dimension){
+    public static void printSquare(int dimension){
 
         //Initialize and Instantiate graphical symbol
         String symbol = "*  ";
