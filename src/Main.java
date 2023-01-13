@@ -1,5 +1,7 @@
 import kata.KataSimpleFunctions;
 
+import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class Main {
         }
          */
 
-        KataSimpleFunctions.fizzBuzz(100);
-
+        //KataSimpleFunctions.fizzBuzz(100);
+        int[] input = {2, 3, 1, 7, 9, 5, 11, 3, 5};
+        KataSimpleFunctions.findMaximumPairs(input);
     }
 }
