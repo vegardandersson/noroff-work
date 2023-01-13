@@ -1,8 +1,4 @@
-import other_stuff.PrintShapes;
-import other_stuff.TestClass;
 import kata.KataSimpleFunctions;
-
-import java.util.Scanner;
 
 
 public class Main {
