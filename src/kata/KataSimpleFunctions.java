@@ -74,4 +74,26 @@ public class KataSimpleFunctions {
         }
         return resultPairs;
     }
+
+    public static String toCamelCase(String input){
+        StringBuilder builder = new StringBuilder();
+        String[] splitString = input.split("_");
+        builder.append(splitString[0]);
+        for(int i = 1; i < splitString.length; i++){
+            builder.append(splitString[i].substring(0, 1).toUpperCase() + splitString[i].substring(1));
+        }
+        return builder.toString();
+    }
+
+    public static String toSnakeCase(String input){
+        StringBuilder builder = new StringBuilder();
+        String[] splitString = input.split("(?=\\p{Lu})");
+        builder.append(splitString[0]);
+        for(int i = 1; i < splitString.length; i++){
+            builder.append("_");
+            builder.append(splitString[i].toLowerCase());
+        }
+        return builder.toString();
+    }
+
 }

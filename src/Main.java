@@ -16,7 +16,11 @@ public class Main {
          */
 
         //KataSimpleFunctions.fizzBuzz(100);
-        int[] input = {2, 3, 1, 7, 9, 5, 11, 3, 5};
-        KataSimpleFunctions.findMaximumPairs(input);
+        //int[] input = {2, 3, 1, 7, 9, 5, 11, 3, 5};
+        //KataSimpleFunctions.findMaximumPairs(input);
+
+        System.out.println(KataSimpleFunctions.toCamelCase("input_string_longer"));
+        System.out.println(KataSimpleFunctions.toSnakeCase("inputStringLonger"));
+
     }
 }
