@@ -19,8 +19,12 @@ public class Main {
         //int[] input = {2, 3, 1, 7, 9, 5, 11, 3, 5};
         //KataSimpleFunctions.findMaximumPairs(input);
 
-        System.out.println(KataSimpleFunctions.toCamelCase("input_string_longer"));
-        System.out.println(KataSimpleFunctions.toSnakeCase("inputStringLonger"));
+        //System.out.println(KataSimpleFunctions.toCamelCase("input_string_longer"));
+        //System.out.println(KataSimpleFunctions.toSnakeCase("inputStringLonger"));
+
+        System.out.println(KataSimpleFunctions.findFridayTheThirteenth(2026));
+        //int[] range = {2021, 3000};
+        //System.out.println(KataSimpleFunctions.findYearWithMostFridayTheThirteenths(range));
 
     }
 }

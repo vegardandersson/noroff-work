@@ -1,9 +1,10 @@
 package kata;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.util.*;
+import static java.time.temporal.TemporalAdjusters.firstDayOfYear;
 
 public class KataSimpleFunctions {
     public static void fizzBuzz(int numOfLoops){
@@ -94,6 +95,39 @@ public class KataSimpleFunctions {
             builder.append(splitString[i].toLowerCase());
         }
         return builder.toString();
+    }
+
+    public static List<String> findFridayTheThirteenth(int year){
+
+        List<String> fridays = new ArrayList<>();
+        LocalDate date = LocalDate.of(year, 1, 1);
+        LocalDate day = date.with(firstDayOfYear());
+
+        while(day.getDayOfWeek() != DayOfWeek.FRIDAY){
+            day = day.plusDays(1);
+        }
+        while(day.getYear() != year+1){
+            if(day.getDayOfMonth() == 13){
+                fridays.add(day.toString());
+            }
+            day = day.plusDays(7);
+        }
+        return fridays;
+    }
+
+    public static List<Integer> findYearWithMostFridayTheThirteenths(int[] range){
+        List<Integer> numOfFridays = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        for(int i = range[0]; i < range[1]+1; i++){
+            numOfFridays.add(findFridayTheThirteenth(i).size());
+        }
+        int maxNumber = Collections.max(numOfFridays);
+        for(int i = 0; i < numOfFridays.size(); i++){
+            if(numOfFridays.get(i) == maxNumber){
+                result.add(i+range[0]);
+            }
+        }
+        return result;
     }
 
 }
