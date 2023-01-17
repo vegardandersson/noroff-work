@@ -100,18 +100,19 @@ public class KataSimpleFunctions {
     public static List<String> findFridayTheThirteenth(int year){
 
         List<String> fridays = new ArrayList<>();
-        LocalDate date = LocalDate.of(year, 1, 1);
-        LocalDate day = date.with(firstDayOfYear());
+        LocalDate day = LocalDate.of(year, 1, 1);
 
         while(day.getDayOfWeek() != DayOfWeek.FRIDAY){
             day = day.plusDays(1);
         }
+
         while(day.getYear() != year+1){
             if(day.getDayOfMonth() == 13){
                 fridays.add(day.toString());
             }
             day = day.plusDays(7);
         }
+
         return fridays;
     }
 

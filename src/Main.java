@@ -22,7 +22,7 @@ public class Main {
         //System.out.println(KataSimpleFunctions.toCamelCase("input_string_longer"));
         //System.out.println(KataSimpleFunctions.toSnakeCase("inputStringLonger"));
 
-        System.out.println(KataSimpleFunctions.findFridayTheThirteenth(2026));
+        System.out.println(KataSimpleFunctions.findFridayTheThirteenth(2021));
         //int[] range = {2021, 3000};
         //System.out.println(KataSimpleFunctions.findYearWithMostFridayTheThirteenths(range));
 
