@@ -4,6 +4,9 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static java.time.temporal.TemporalAdjusters.firstDayOfYear;
 
 public class KataSimpleFunctions {
@@ -130,5 +133,69 @@ public class KataSimpleFunctions {
         }
         return result;
     }
+
+    public static int checkPasswordStrength(String password){
+
+        //Color codes
+        String ANSI_RESET = "\u001B[0m";
+        String ANSI_RED = "\u001B[31m";
+        String ANSI_GREEN = "\u001B[32m";
+        String ANSI_YELLOW = "\u001B[33m";
+
+        //ErrorMessages for missing strength-characteristics
+        String missingLowerCaseCharacter = "Needs at least 1 lower case letter";
+        String missingUpperCaseCharacter = "Needs at least 1 upper case letter";
+        String missingSpecialCharacter = "Needs at least 1 special character";
+        String missingDigitCharacter = "Needs at least 1 digit";
+        String missingLengthRequirement = "Password must be 8 or longer";
+
+        //Elements for visually displaying password strength
+        String strengthOutputString = "";
+        String strongSegment = "|||||";
+        String emptySegment = ".....";
+
+        int strengthLevel = 0;
+
+        //Container for special characters
+        Pattern patternSpecialCharacters = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
+        Matcher containsSpecialCharacter = patternSpecialCharacters.matcher(password);
+
+        boolean lowerCaseCharacter = false;
+        boolean upperCaseCharacter = false;
+        boolean specialCharacter = false;
+        boolean digitCharacter = false;
+        boolean lengthRequirement = false;
+
+        for(int i = 0; i < password.length(); i++){
+            char character = password.charAt(i);
+            if(!lowerCaseCharacter){lowerCaseCharacter = Character.isLowerCase(character);}
+            if(!upperCaseCharacter){upperCaseCharacter = Character.isUpperCase(character);}
+            if(!specialCharacter){specialCharacter = containsSpecialCharacter.find();}
+            if(!digitCharacter){digitCharacter = Character.isDigit(character);}
+        }
+        lengthRequirement = password.length() >= 8;
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(ANSI_RED);
+        if(!lowerCaseCharacter){builder.append(missingLowerCaseCharacter + "\n");}else{strengthLevel++;}
+        if(!upperCaseCharacter){builder.append(missingUpperCaseCharacter + "\n");}else{strengthLevel++;}
+        if(!specialCharacter){builder.append(missingSpecialCharacter + "\n");}else{strengthLevel++;}
+        if(!digitCharacter){builder.append(missingDigitCharacter + "\n");}else{strengthLevel++;}
+        if(!lengthRequirement){builder.append(missingLengthRequirement + "\n");}else{strengthLevel++;}
+
+        strengthOutputString += "[" + strongSegment.repeat(strengthLevel) + emptySegment.repeat(5-strengthLevel) + "]";
+
+        StringBuilder builder2 = new StringBuilder(strengthOutputString);
+        if(strengthLevel == 5){builder2.insert(0, ANSI_GREEN);}
+        else if (strengthLevel > 2){builder2.insert(0, ANSI_YELLOW);}
+        else{builder2.insert(0, ANSI_RED);}
+
+        System.out.println("\n" + builder2 + "\n");
+        System.out.println(builder);
+        if(strengthLevel == 5){System.out.println(ANSI_GREEN + "Strong password!");}
+
+        return strengthLevel;
+    }
+
 
 }
