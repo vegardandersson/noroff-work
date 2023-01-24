@@ -197,5 +197,28 @@ public class KataSimpleFunctions {
         return strengthLevel;
     }
 
+    public static int sumDigProd(int num1, int num2){
+        int sum = num1 + num2;
+        return KataSimpleFunctions.sumRec(sum);
+    }
+
+    public static int sumRec(int sum){
+        int[] digits = KataSimpleFunctions.splitNumber(sum);
+        int answer = digits[0]*digits[1];
+        if(answer > 10){
+            sumRec(answer);
+        } else {
+            System.out.println(digits[0] + " * " + digits[1] + " = " + answer);
+        }
+        return digits[0]*digits[1];
+    }
+
+    public static int[] splitNumber(int num){
+        String sumString = Integer.toString(num);
+        int halfwayPoint = sumString.length() % 2 == 0 ? sumString.length()/2 : sumString.length()/2 + 1;
+        return new int[]{
+                Integer.parseInt(sumString.substring(0, halfwayPoint)),
+                Integer.parseInt(sumString.substring(halfwayPoint))};
+    }
 
 }

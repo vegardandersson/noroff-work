@@ -28,7 +28,9 @@ public class Main {
 
         //KataSimpleFunctions.checkPasswordStrength("pass");
         //KataSimpleFunctions.checkPasswordStrength("sword_7");
-        KataSimpleFunctions.checkPasswordStrength("password5_U");
+        //KataSimpleFunctions.checkPasswordStrength("password5_U");
+
+        KataSimpleFunctions.sumDigProd(16, 28);
 
     }
 }
