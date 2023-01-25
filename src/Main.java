@@ -30,7 +30,11 @@ public class Main {
         //KataSimpleFunctions.checkPasswordStrength("sword_7");
         //KataSimpleFunctions.checkPasswordStrength("password5_U");
 
-        KataSimpleFunctions.sumDigProd(16, 28);
+        //KataSimpleFunctions.sumDigProd(16, 28);
+
+        System.out.println(KataSimpleFunctions.romanToDecimal("D"));
+        System.out.println(KataSimpleFunctions.romanToDecimal("LXXIV"));
+        System.out.println(KataSimpleFunctions.romanToDecimal("XCVIII"));
 
     }
 }

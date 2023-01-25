@@ -221,4 +221,26 @@ public class KataSimpleFunctions {
                 Integer.parseInt(sumString.substring(halfwayPoint))};
     }
 
+    public static int romanToDecimal(String romanNumeral){
+        Map<String, Integer> romanToDecimalMap = Map.of(
+                "I", 1, "V", 5, "X", 10, "L",
+                50, "C", 100, "D", 500, "M", 1000);
+        int sum = 0;
+        String[] symbols = romanNumeral.split("");
+        if(symbols.length == 1){return romanToDecimalMap.get(symbols[0]);}
+        for(int i = 0; i < symbols.length - 1; i++){
+            int first = romanToDecimalMap.get(symbols[i]);
+            int second = romanToDecimalMap.get(symbols[i+1]);
+            if(first < second){
+                sum += second-first;
+                i++;
+            }else if(i == (symbols.length - 2)){
+                sum += first + second;
+            }else{
+                sum += first;
+            }
+        }
+        return sum;
+    }
+
 }
