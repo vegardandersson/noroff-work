@@ -32,9 +32,11 @@ public class Main {
 
         //KataSimpleFunctions.sumDigProd(16, 28);
 
-        System.out.println(KataSimpleFunctions.romanToDecimal("D"));
-        System.out.println(KataSimpleFunctions.romanToDecimal("LXXIV"));
-        System.out.println(KataSimpleFunctions.romanToDecimal("XCVIII"));
+        //System.out.println(KataSimpleFunctions.romanToDecimal("D"));
+        //System.out.println(KataSimpleFunctions.romanToDecimal("LXXIV"));
+        //System.out.println(KataSimpleFunctions.romanToDecimal("XCVIII"));
+
+        System.out.println(KataSimpleFunctions.canComplete("butl", "beautiful"));
 
     }
 }

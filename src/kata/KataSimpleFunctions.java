@@ -243,4 +243,16 @@ public class KataSimpleFunctions {
         return sum;
     }
 
+    public static boolean canComplete(String input, String target){
+        boolean result = true;
+        char[] inputArray = input.toCharArray();
+        int prevIndex = 0;
+        for(int i = 0; i < inputArray.length; i++){
+            int charIndex = target.indexOf(inputArray[i]);
+            result = charIndex > 0 && charIndex > prevIndex;
+            prevIndex = charIndex;
+        }
+        return result;
+    }
+
 }
