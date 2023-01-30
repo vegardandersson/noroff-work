@@ -255,4 +255,34 @@ public class KataSimpleFunctions {
         return result;
     }
 
+    public static boolean validateCreditCardNumber(long number){
+        String numberString = Long.toString(number);
+        if(numberString.length() < 14 || numberString.length() > 19){return false;}
+        int checkDigit = Integer.parseInt(numberString.substring(numberString.length()-1));
+        numberString = numberString.substring(0, numberString.length()-1);
+        StringBuilder builder = new StringBuilder(numberString);
+        numberString = builder.reverse().toString();
+        String newNumberString = "";
+        for(int i = 0; i < numberString.length(); i++){
+            if(i % 2 != 0){
+                int sum = Integer.parseInt(Character.toString(numberString.charAt(i)))*2;
+                if(sum > 9){
+                    String[] splitSum = Integer.toString(sum).split("");
+                    sum = Integer.parseInt(splitSum[0]) + Integer.parseInt(splitSum[1]);
+                }
+                newNumberString += Integer.toString(sum);
+            }else{
+                newNumberString += Character.toString(numberString.charAt(i));
+            }
+        }
+
+        int total = 0;
+        for(char c : newNumberString.toCharArray()){
+            total += Integer.parseInt(Character.toString(c));
+        }
+        String totalString = Integer.toString(total);
+
+        return 10 - Integer.parseInt(totalString.substring(totalString.length()-1)) == checkDigit;
+    }
+
 }

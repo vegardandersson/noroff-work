@@ -36,7 +36,9 @@ public class Main {
         //System.out.println(KataSimpleFunctions.romanToDecimal("LXXIV"));
         //System.out.println(KataSimpleFunctions.romanToDecimal("XCVIII"));
 
-        System.out.println(KataSimpleFunctions.canComplete("butl", "beautiful"));
+        //System.out.println(KataSimpleFunctions.canComplete("butl", "beautiful"));
+
+        System.out.println(KataSimpleFunctions.validateCreditCardNumber(1234567890123452L));
 
     }
 }
