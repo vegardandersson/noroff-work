@@ -38,7 +38,8 @@ public class Main {
 
         //System.out.println(KataSimpleFunctions.canComplete("butl", "beautiful"));
 
-        System.out.println(KataSimpleFunctions.validateCreditCardNumber(1234567890123452L));
+        //System.out.println(KataSimpleFunctions.validateCreditCardNumber(1234567890123452L));
+        System.out.println(KataSimpleFunctions.removeLetters(new String[]{"t", "t", "e", "s", "t", "u"}, "testing"));
 
     }
 }

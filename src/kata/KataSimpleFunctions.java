@@ -285,4 +285,11 @@ public class KataSimpleFunctions {
         return 10 - Integer.parseInt(totalString.substring(totalString.length()-1)) == checkDigit;
     }
 
+    public static List<String> removeLetters(String[] letters, String word){
+        List<String> lettersList = new ArrayList<>(List.of(letters)); // Format primitive array into a List
+        List<String> wordList = List.of(word.split("")); // Split word into list of characters
+        for (String s : wordList) {lettersList.remove(s);} // Remove all letters in word from array
+        return lettersList;
+    }
+
 }
